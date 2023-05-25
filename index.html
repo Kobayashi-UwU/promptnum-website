@@ -1,0 +1,389 @@
+<html>
+  <head>
+    <title>SHARE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="//db.onlinewebfonts.com/c/42a9d3c2ccd7f17b56eb87d52eddb0a9?family=P22UndergroundW01-Heavy"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="script.js"></script>
+    <style>
+      body {
+        background: #f26b2c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="pc_desktop" style="position: absolute; width: 100%">
+        <img
+          src="New folder/logo.jpg"
+          alt=""
+          style="position: absolute; top: 0; right: 0; width: 15%; height: auto"
+        />
+        <center>
+          <center>
+            <img
+              src="New folder/top.jpg"
+              alt=""
+              style="width: 35%; padding-bottom: 1%"
+            />
+          </center>
+          <form action="" style="padding-left: 30%; padding-right: 30%">
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="name_input" />
+              <span>Name</span>
+            </div>
+            <div class="grid_1_3" style="padding-bottom: 3%">
+              <div class="inputBox2">
+                <input type="text" required="required" id="age_input" />
+                <span>Age</span>
+              </div>
+              <div class="inputBox2">
+                <input type="text" required="required" id="level_input" />
+                <span>Level</span>
+              </div>
+            </div>
+            <div class="grid_1_1" style="padding-bottom: 3%">
+              <div class="inputBox2">
+                <input type="text" required="required" id="major_input" />
+                <span>Class/Major</span>
+              </div>
+              <div class="inputBox2">
+                <input type="text" required="required" id="birth_input" />
+                <span>Birth</span>
+              </div>
+            </div>
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="fcolor_input" />
+              <span>Favorite color</span>
+            </div>
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="flunch_input" />
+              <span>Favorite lunch</span>
+            </div>
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="fmusic_input" />
+              <span>Favorite music</span>
+            </div>
+
+            <center>
+              <input
+                type="file"
+                id="uploadBtn"
+                onchange="previewFile()"
+                style="visibility: hidden"
+              />
+              <br />
+              <label for="uploadBtn" style="border-radius: 20px"
+                >Upload Image</label
+              >
+              <br />
+              <br />
+              <img
+                id="preview"
+                class="img_display"
+                style="height: 28%; width: 25%; border-radius: 20px"
+              />
+              <br />
+              <br />
+              <button
+                id="button_submit"
+                type="button"
+                class="square-button"
+                onclick="displayText()"
+              >
+                Create!
+              </button>
+            </center>
+          </form>
+          <center>
+            <button class="square-button" id="dl-png">Download!</button>
+            <script src="html2canvas.min.js"></script>
+            <script>
+              document.getElementById("dl-png").onclick = function () {
+                const screenshotTarget =
+                  document.getElementById("example-image");
+
+                html2canvas(screenshotTarget).then((canvas) => {
+                  const base64image = canvas.toDataURL("image/png");
+                  var anchor = document.createElement("a");
+                  anchor.setAttribute("href", base64image);
+                  anchor.setAttribute("Download", "my-image.png");
+                  anchor.click();
+                  anchor.remove();
+                });
+              };
+            </script>
+            <div id="displayArea"></div>
+            <div id="example-image" style="width: 65%; height: 95%">
+              <div class="image-container">
+                <img
+                  src="card.png"
+                  alt=""
+                  style="width: auto; position: relative; max-width: 1000px"
+                />
+                <img
+                  id="result_img"
+                  style="
+                    position: absolute;
+                    right: 60%;
+                    top: 34.8%;
+                    height: 345px;
+                    width: 280px;
+                    border-radius: 20px;
+                    object-fit: cover;
+                    background: #dfdfdf;
+                  "
+                />
+                <div
+                  class="text-overlay"
+                  style="top: 43.4%; left: 73%; width: 50%"
+                >
+                  <p id="name_p">Desktop</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 49.5%; left: 74%; width: 50%"
+                >
+                  <p id="age_p">Age</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 49.5%; left: 82%; width: 50%"
+                >
+                  <p id="level_p">Level</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 55.5%; left: 78%; width: 50%"
+                >
+                  <p id="major_p">Room</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 61.7%; left: 76%; width: 50%"
+                >
+                  <p id="birth_p">Birth</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 67.8%; left: 77%; width: 50%"
+                >
+                  <p id="fcolor_p">Fav color</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 73.8%; left: 81%; width: 50%"
+                >
+                  <p id="flunch_p">Fav food</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 79.8%; left: 80%; width: 50%"
+                >
+                  <p id="fmusic_p">Fav song</p>
+                </div>
+              </div>
+            </div>
+          </center>
+        </center>
+      </div>
+    </div>
+    <div class="mobile_px5">
+      <div class="pc_desktop" style="position: absolute; width: 100%">
+        <img
+          src="New folder/logo.jpg"
+          alt=""
+          style="position: absolute; top: 0; right: 0; width: 15%; height: auto"
+        />
+        <center>
+          <center>
+            <img
+              src="New folder/top.jpg"
+              alt=""
+              style="width: 35%; padding-bottom: 1%"
+            />
+          </center>
+          <form action="" style="padding-left: 30%; padding-right: 30%">
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="name_input_mobile" />
+              <span>Name</span>
+            </div>
+            <div class="grid_1_3" style="padding-bottom: 3%">
+              <div class="inputBox2">
+                <input type="text" required="required" id="age_input_mobile" />
+                <span>Age</span>
+              </div>
+              <div class="inputBox2">
+                <input
+                  type="text"
+                  required="required"
+                  id="level_input_mobile"
+                />
+                <span>Level</span>
+              </div>
+            </div>
+            <div class="grid_1_1" style="padding-bottom: 3%">
+              <div class="inputBox2">
+                <input
+                  type="text"
+                  required="required"
+                  id="major_input_mobile"
+                />
+                <span>Class/Major</span>
+              </div>
+              <div class="inputBox2">
+                <input
+                  type="text"
+                  required="required"
+                  id="birth_input_mobile"
+                />
+                <span>Birth</span>
+              </div>
+            </div>
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="fcolor_input_mobile" />
+              <span>Favorite color</span>
+            </div>
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="flunch_input_mobile" />
+              <span>Favorite lunch</span>
+            </div>
+            <div class="inputBox" style="padding-bottom: 3%">
+              <input type="text" required="required" id="fmusic_input_mobile" />
+              <span>Favorite music</span>
+            </div>
+
+            <center>
+              <input
+                type="file"
+                id="uploadBtn_mobile"
+                onchange="previewFile_mobile()"
+                style="visibility: hidden"
+              />
+              <br />
+              <label for="uploadBtn_mobile" style="border-radius: 20px"
+                >Upload Image</label
+              >
+              <br />
+              <br />
+              <img
+                id="preview_mobile"
+                class="img_display"
+                style="height: 28%; width: 25%; border-radius: 20px"
+              />
+              <br />
+              <br />
+              <button
+                id="button_submit_mobile"
+                type="button"
+                class="square-button"
+                onclick="displayText_mobile()"
+              >
+                Create!
+              </button>
+            </center>
+          </form>
+          <center>
+            <button class="square-button" id="dl-png_mobile">Download!</button>
+            <script src="html2canvas.min.js"></script>
+            <script>
+              document.getElementById("dl-png_mobile").onclick = function () {
+                const screenshotTarget = document.getElementById(
+                  "example-image_mobile"
+                );
+
+                html2canvas(screenshotTarget).then((canvas) => {
+                  const base64image = canvas.toDataURL("image/png");
+                  var anchor = document.createElement("a");
+                  anchor.setAttribute("href", base64image);
+                  anchor.setAttribute("Download", "my-image.png");
+                  anchor.click();
+                  anchor.remove();
+                });
+              };
+            </script>
+            <div id="displayArea_mobile"></div>
+            <div id="example-image_mobile" style="width: 100%; height: 95%">
+              <div class="image-container" style="width: 100%; height: 95%">
+                <img
+                  src="card.png"
+                  alt=""
+                  style="
+                    width: auto;
+                    position: relative;
+                    max-width: 1000px;
+                    left: 1%;
+                  "
+                />
+                <img
+                  id="result_img_mobile"
+                  style="
+                    position: absolute;
+                    right: 60%;
+                    top: 34.8%;
+                    height: 345px;
+                    width: 280px;
+                    border-radius: 20px;
+                    object-fit: cover;
+                    background: #dfdfdf;
+                  "
+                />
+                <div
+                  class="text-overlay"
+                  style="top: 43.4%; left: 74%; width: 50%"
+                >
+                  <p id="name_p_mobile">pixel 5</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 49.5%; left: 75%; width: 50%"
+                >
+                  <p id="age_p_mobile">Age</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 49.5%; left: 85%; width: 50%"
+                >
+                  <p id="level_p_mobile">Level</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 55.5%; left: 80%; width: 50%"
+                >
+                  <p id="major_p_mobile">Room</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 61.7%; left: 78%; width: 50%"
+                >
+                  <p id="birth_p_mobile">Birth</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 67.8%; left: 79%; width: 50%"
+                >
+                  <p id="fcolor_p_mobile">Fav color</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 73.8%; left: 84%; width: 50%"
+                >
+                  <p id="flunch_p_mobile">Fav food</p>
+                </div>
+                <div
+                  class="text-overlay"
+                  style="top: 79.8%; left: 83%; width: 50%"
+                >
+                  <p id="fmusic_p_mobile">Fav song</p>
+                </div>
+              </div>
+            </div>
+          </center>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
