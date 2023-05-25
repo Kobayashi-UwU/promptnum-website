@@ -5,7 +5,7 @@ function previewFile() {
   console.log(file);
 
   reader.onloadend = function () {
-    document.getElementById("preview").src = reader.result;
+    // document.getElementById("preview").src = reader.result;
     document.getElementById("result_img").src = reader.result;
   };
 
@@ -23,7 +23,7 @@ function previewFile_mobile() {
   var reader_mobile = new FileReader();
 
   reader_mobile.onloadend = function () {
-    document.getElementById("preview_mobile").src = reader_mobile.result;
+    // document.getElementById("preview_mobile").src = reader_mobile.result;
     document.getElementById("result_img_mobile").src = reader_mobile.result;
   };
 
