@@ -26,10 +26,39 @@ body {
   font-family: "mainfont";
 }
 
-.topRightLogo {
-  position: absolute;
-  top: 0;
-  right: 0;
+.crop-container {
+  position: relative;
+  width: 280px;
+  height: 345px;
+  overflow: hidden;
+}
+
+.crop-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.crop-container {
+  position: relative;
+  width: 280px;
+  height: 345px;
+  overflow: hidden;
+}
+
+.crop-container {
+  position: relative;
+  width: 280px;
+  height: 345px;
+  overflow: hidden;
+}
+
+.crop-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .grid_1_3 {
