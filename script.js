@@ -1,37 +1,176 @@
-function previewFile() {
-  // var preview = document.querySelector("img");
-  var file = document.querySelector("input[type=file]").files[0];
+// function previewFile() {
+//   // var preview = document.querySelector("img");
+//   var file = document.querySelector("input[type=file]").files[0];
+//   var reader = new FileReader();
+
+//   reader.onloadend = function () {
+//     // document.getElementById("preview").src = reader.result;
+//     document.getElementById("result_img").src = reader.result;
+//   };
+
+//   if (file) {
+//     reader.readAsDataURL(file);
+//   } else {
+//     preview.src = "";
+//   }
+// }
+// function previewImage() {
+//   var fileInput = document.getElementById("uploadBtn");
+//   var file = fileInput.files[0];
+//   var reader = new FileReader();
+
+//   reader.onloadend = function () {
+//     var img = new Image();
+//     img.onload = function () {
+//       var canvas = document.createElement("canvas");
+//       var ctx = canvas.getContext("2d");
+
+//       // Calculate the aspect ratio of the uploaded image
+//       var aspectRatio = img.width / img.height;
+
+//       // Calculate the desired width and height for cropping
+//       var desiredWidth = 280;
+//       var desiredHeight = 345;
+
+//       // Calculate the actual width and height based on the aspect ratio
+//       var actualWidth, actualHeight;
+
+//       if (aspectRatio > desiredWidth / desiredHeight) {
+//         actualWidth = img.width;
+//         actualHeight = img.width / (desiredWidth / desiredHeight);
+//       } else {
+//         actualWidth = img.height * (desiredWidth / desiredHeight);
+//         actualHeight = img.height;
+//       }
+
+//       // Calculate the cropping coordinates to center the image
+//       var offsetX = (img.width - actualWidth) / 2;
+//       var offsetY = (img.height - actualHeight) / 2;
+
+//       // Set the canvas dimensions to the desired final size
+//       canvas.width = desiredWidth;
+//       canvas.height = desiredHeight;
+
+//       // Draw the cropped image onto the canvas
+//       ctx.drawImage(
+//         img,
+//         offsetX,
+//         offsetY,
+//         actualWidth,
+//         actualHeight,
+//         0,
+//         0,
+//         desiredWidth,
+//         desiredHeight
+//       );
+
+//       // Get the cropped image as a data URL
+//       var croppedDataUrl = canvas.toDataURL();
+
+//       // Display the cropped image
+//       var previewImage = document.getElementById("previewImage");
+//       previewImage.src = croppedDataUrl;
+//     };
+
+//     img.src = reader.result;
+//   };
+
+//   if (file) {
+//     reader.readAsDataURL(file);
+//   } else {
+//     // Clear the preview image if no file is selected
+//     var previewImage = document.getElementById("previewImage");
+//     previewImage.src = "";
+//   }
+// }
+
+function previewImage_mobile() {
+  var fileInput = document.getElementById("uploadBtn_mobile");
+  var file = fileInput.files[0];
   var reader = new FileReader();
 
   reader.onloadend = function () {
-    // document.getElementById("preview").src = reader.result;
-    document.getElementById("result_img").src = reader.result;
+    var img = new Image();
+    img.onload = function () {
+      var canvas = document.createElement("canvas");
+      var ctx = canvas.getContext("2d");
+
+      // Calculate the aspect ratio of the uploaded image
+      var aspectRatio = img.width / img.height;
+
+      // Calculate the desired width and height for cropping
+      var desiredWidth = 280;
+      var desiredHeight = 345;
+
+      // Calculate the actual width and height based on the aspect ratio
+      var actualWidth, actualHeight;
+
+      if (aspectRatio > desiredWidth / desiredHeight) {
+        actualWidth = img.width;
+        actualHeight = img.width / (desiredWidth / desiredHeight);
+      } else {
+        actualWidth = img.height * (desiredWidth / desiredHeight);
+        actualHeight = img.height;
+      }
+
+      // Calculate the cropping coordinates to center the image
+      var offsetX = (img.width - actualWidth) / 2;
+      var offsetY = (img.height - actualHeight) / 2;
+
+      // Set the canvas dimensions to the desired final size
+      canvas.width = desiredWidth;
+      canvas.height = desiredHeight;
+
+      // Draw the cropped image onto the canvas
+      ctx.drawImage(
+        img,
+        offsetX,
+        offsetY,
+        actualWidth,
+        actualHeight,
+        0,
+        0,
+        desiredWidth,
+        desiredHeight
+      );
+
+      // Get the cropped image as a data URL
+      var croppedDataUrl = canvas.toDataURL();
+
+      // Display the cropped image
+      var previewImage = document.getElementById("previewImage");
+      previewImage.src = croppedDataUrl;
+    };
+
+    img.src = reader.result;
   };
 
   if (file) {
     reader.readAsDataURL(file);
   } else {
-    preview.src = "";
+    // Clear the preview image if no file is selected
+    var previewImage = document.getElementById("previewImage");
+    previewImage.src = "";
   }
 }
 
-function previewFile_mobile() {
-  // var preview_mobile = document.getElementById("preview_mobile");
-  var fileInput_mobile = document.getElementById("uploadBtn_mobile");
-  var file_mobile = fileInput_mobile.files[0];
-  var reader_mobile = new FileReader();
+// function previewFile_mobile() {
+//   // var preview_mobile = document.getElementById("preview_mobile");
+//   var fileInput_mobile = document.getElementById("uploadBtn_mobile");
+//   var file_mobile = fileInput_mobile.files[0];
+//   var reader_mobile = new FileReader();
 
-  reader_mobile.onloadend = function () {
-    // document.getElementById("preview_mobile").src = reader_mobile.result;
-    document.getElementById("result_img_mobile").src = reader_mobile.result;
-  };
+//   reader_mobile.onloadend = function () {
+//     // document.getElementById("preview_mobile").src = reader_mobile.result;
+//     document.getElementById("result_img_mobile").src = reader_mobile.result;
+//   };
 
-  if (file_mobile) {
-    reader_mobile.readAsDataURL(file_mobile);
-  } else {
-    preview_mobile.src = "";
-  }
-}
+//   if (file_mobile) {
+//     reader_mobile.readAsDataURL(file_mobile);
+//   } else {
+//     preview_mobile.src = "";
+//   }
+// }
 
 // function previewFile_mobile() {
 //   var fileInput_mobile = document.getElementById("uploadBtn_mobile");
