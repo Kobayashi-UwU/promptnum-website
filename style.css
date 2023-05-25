@@ -14,8 +14,18 @@
 body {
   font-family: "mainfont";
 }
-
 @media screen and (device-width: 393px) {
+  .desktop {
+    visibility: collapse;
+  }
+  .mobile_px5 {
+    visibility: visible;
+  }
+}
+body {
+  font-family: "mainfont";
+}
+@media screen and (device-width: 1080px) {
   .desktop {
     visibility: collapse;
   }
